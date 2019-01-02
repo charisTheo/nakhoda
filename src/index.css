@@ -15,12 +15,18 @@ code {
     monospace;
 }
 
-.theme-yellow {
+.theme-yellow-text {
   color: rgb(224, 174, 97) !important;
+}
+.theme-grey-text {
+  color: rgb(94, 95, 96) !important;
+}
+.theme-grey-darker-background {
+  background-color: rgb(35, 36, 37);
+}
+.theme-grey-background {
+  background-color: rgb(94, 95, 96) !important;
 }
 /* .title {
   color: rgb(224, 174, 97);
-} */
-/* .nav-bar {
-  background-color: rgb(35, 36, 37);
 } */
