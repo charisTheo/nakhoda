@@ -19,16 +19,22 @@ const styles = {
         textAlign: 'left',
         padding: '6px 16px',
         position: 'absolute',
+        zIndex: 99,
     },
     listItem: {
         maxHeight: '30px',
         fontSize: '10px',
         marginTop: '5px', 
     },
+    listItemButton: {
+        backgroundColor: 'transparent',
+        border: 'none',
+        color: 'rgb(254, 255, 255)'
+    },
     icon: {
         display: 'inline-block',
         maxHeight: '30px',
-        fontSize: '12px',
+        fontSize: '14px',
         color: 'rgb(254, 255, 255)',
     },
 };
@@ -56,7 +62,7 @@ export default class Dropdown extends Component {
 
     toggleItem = (event) => {
         this.setState({
-            selected: event.target.text,
+            selected: event.target.innerHTML,
             listOpen: false
         });
     };
@@ -76,9 +82,9 @@ export default class Dropdown extends Component {
             {this.state.listOpen && <ul style={styles.list} className='theme-grey-dark-background'>
                 {list.map((item, index) => (
                     <li style={styles.listItem} key={index} className='theme-grey-text'>
-                        <a onClick={this.toggleItem}>
+                        <button style={styles.listItemButton} onClick={this.toggleItem}>
                             {item}
-                        </a>
+                        </button>
                     </li>
                 ))}
             </ul>}
@@ -86,3 +92,5 @@ export default class Dropdown extends Component {
         )
     }
 }
+
+// export default withStyles(styles)(ButtonAppBar);
