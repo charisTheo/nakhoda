@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -12,16 +12,22 @@ const styles = theme => ({
   root: {
     width: '100%',
   },
+  toolbar: {
+    boxShadow: '0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)',
+    padding: 0,
+  },
   grow: {
     flexGrow: 1,
   },
   title: {
     fontSize: '12px',
-    padding: '0 20px',
+    padding: '0 40px',
   },
   suntButton: {
     textTransform: 'initial',
-    fontSize: '12px',
+    fontSize: '14px',
+    fontWeight: 'lighter',
+    minWidth: '54px',
     color: 'rgb(178, 131, 119)',
   },
   buttonText: {
@@ -56,7 +62,7 @@ const styles = theme => ({
   },
 });
 
-class PrimarySearchAppBar extends React.Component {
+class MenuBar extends Component {
   state = {
     switch1: false,
     switch2: true,
@@ -74,7 +80,7 @@ class PrimarySearchAppBar extends React.Component {
     return (
       <div className={classes.root}>
         <AppBar position="static">
-          <Toolbar className='TopMenuToolbar theme-grey-dark-background'>
+          <Toolbar className={classes.toolbar + ' theme-grey-dark-background'}>
             <Button className={classes.suntButton}>Sunt</Button>
 
             <div className='divider-vertical' />
@@ -147,8 +153,8 @@ class PrimarySearchAppBar extends React.Component {
   }
 }
 
-PrimarySearchAppBar.propTypes = {
+MenuBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(PrimarySearchAppBar);
+export default withStyles(styles)(MenuBar);

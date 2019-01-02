@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
+import { withStyles } from '@material-ui/core/styles';
 
 import Dropdown from '../Dropdown/Dropdown.cmp';
 
-
-const styles = {
+const styles = () => ({
+  root: {
+    flexGrow: 1,
+  },
   header: {
     flexGrow: 1,
     maxHeight: '30px',
@@ -38,9 +42,9 @@ const styles = {
     fontSize: '12px',
     backgroundColor: 'rgb(65, 66, 67)',
   }
-};
+});
 
-export default class NavBar extends Component {
+class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -68,10 +72,12 @@ export default class NavBar extends Component {
   };
 
   render() {
+    const { classes } = this.props;
+
     return (
-      <div className="NavBar">
-        <AppBar style={styles.header} className='theme-grey-darker-background' position="static">
-          <Toolbar style={styles.toolbar}>
+      <div className={classes.root}>
+        <AppBar className={'theme-grey-darker-background ' + classes.header} position="static">
+          <Toolbar className={classes.toolbar}>
             <Grid
             container
             direction="row"
@@ -79,19 +85,31 @@ export default class NavBar extends Component {
             alignItems="center"
             >
               <Grid item>
-                <Button onClick={() => {this.isActive(0)}} className={this.state.index === 0 ? 'theme-yellow-text' : ''} style={styles.button} href="#">
+                <Button 
+                onClick={() => {this.isActive(0)}} 
+                className={classes.button + (this.state.index === 0 ? ' theme-yellow-text' : '')} 
+                href="#">
                   Iste Natus
                 </Button>
-                <Button onClick={() => {this.isActive(1)}} className={this.state.index === 1 ? 'theme-yellow-text' : ''} style={styles.button} href="#">
+                <Button 
+                onClick={() => {this.isActive(1)}} 
+                className={classes.button + (this.state.index === 1 ? ' theme-yellow-text' : '')} 
+                href="#">
                   Explicabo
                 </Button>
-                <Button onClick={() => {this.isActive(2)}} className={this.state.index === 2 ? 'theme-yellow-text' : ''} style={styles.button} href="#">
+                <Button onClick={() => {this.isActive(2)}} 
+                className={classes.button + (this.state.index === 2 ? ' theme-yellow-text' : '')} 
+                href="#">
                   Omnis
                 </Button>
-                <Button onClick={() => {this.isActive(3)}} className={this.state.index === 3 ? 'theme-yellow-text' : ''} style={styles.button} href="#">
+                <Button onClick={() => {this.isActive(3)}} 
+                className={classes.button + (this.state.index === 3 ? ' theme-yellow-text' : '')} 
+                href="#">
                   ipsa quae
                 </Button>
-                <Button onClick={() => {this.isActive(4)}} className={this.state.index === 4 ? 'theme-yellow-text' : ''} style={styles.button} href="#">
+                <Button onClick={() => {this.isActive(4)}} 
+                className={classes.button + (this.state.index === 4 ? ' theme-yellow-text' : '')} 
+                href="#">
                   Perspiciatis Unde
                 </Button>
               </Grid>
@@ -100,7 +118,7 @@ export default class NavBar extends Component {
                 list={['Veris Veritatis', 'Veris', 'Veritatis']}
                 />
 
-              <Avatar className='theme-grey-background' style={styles.avatar}>Z</Avatar>
+              <Avatar className={'theme-grey-background ' + classes.avatar}>Z</Avatar>
             </Grid>
           </Toolbar>
         </AppBar>
@@ -109,6 +127,8 @@ export default class NavBar extends Component {
   }
 }
 
+NavBar.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
-  // flexGrow: 1,
-  // backgroundColor: 'rgb(22, 23, 24)',
+export default withStyles(styles)(NavBar);
