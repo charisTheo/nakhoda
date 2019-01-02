@@ -73,7 +73,7 @@ export default class Dropdown extends Component {
                     : <i style={styles.icon} className="material-icons">keyboard_arrow_down</i>
                 }
             </Button>
-            {this.state.listOpen && <ul style={styles.list} className='theme-grey-darker-background'>
+            {this.state.listOpen && <ul style={styles.list} className='theme-grey-dark-background'>
                 {list.map((item, index) => (
                     <li style={styles.listItem} key={index} className='theme-grey-text'>
                         <a onClick={this.toggleItem}>

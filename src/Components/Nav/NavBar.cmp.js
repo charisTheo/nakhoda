@@ -11,7 +11,6 @@ import Dropdown from '../Dropdown/Dropdown.cmp';
 const styles = {
   header: {
     flexGrow: 1,
-    backgroundColor: 'rgb(22, 23, 24)',
     maxHeight: '30px',
   },
   toolbar: {
@@ -71,7 +70,7 @@ export default class NavBar extends Component {
   render() {
     return (
       <div className="NavBar">
-        <AppBar style={styles.header} position="static">
+        <AppBar style={styles.header} className='theme-grey-darker-background' position="static">
           <Toolbar style={styles.toolbar}>
             <Grid
             container
