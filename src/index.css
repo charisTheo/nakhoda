@@ -6,9 +6,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(34, 35, 36);
+  color: rgb(193, 194, 195);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.theme-yellow {
+  color: rgb(224, 174, 97) !important;
+}
+/* .title {
+  color: rgb(224, 174, 97);
+} */
+/* .nav-bar {
+  background-color: rgb(35, 36, 37);
+} */
