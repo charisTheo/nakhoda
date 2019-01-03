@@ -18,6 +18,9 @@ code {
 .theme-yellow-text {
   color: rgb(224, 174, 97) !important;
 }
+.theme-white-text {
+  color: rgb(210, 211, 212) !important;
+}
 .theme-grey-text {
   color: rgb(94, 95, 96) !important;
 }

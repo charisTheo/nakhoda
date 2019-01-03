@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 
 import NavBar from "./Components/Nav/NavBar.cmp";
 import MenuBar from './Components/MenuBar/MenuBar.cmp';
+import Header from './Components/Header/Header.cmp';
 
 // import Icon from '@material-ui/core/Icon';
 
@@ -14,9 +14,7 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <MenuBar />
-        <header>
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
+        <Header />
       </div>
     );
   }
