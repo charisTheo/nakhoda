@@ -20,19 +20,36 @@ const styles = theme => ({
     flexGrow: 1,
   },
   title: {
-    fontSize: '12px',
+    fontSize: 12,
     padding: '0 40px',
+    fontWeight: 'bold',
   },
   suntButton: {
     textTransform: 'initial',
-    fontSize: '14px',
+    fontSize: 14,
     fontWeight: 'lighter',
-    minWidth: '54px',
+    minWidth: 54,
     color: 'rgb(178, 131, 119)',
+  },
+  downArrowButton: {
+    backgroundColor: 'rgb(94, 95, 96)',
+    color: 'rgb(35, 36, 37)',
+    borderRadius: '50%',
+    fontSize: 17,
+    fontWeight: 'bold',
+    margin: 3,
+  },
+  buttonIcon: {
+    padding: 0,
   },
   buttonText: {
     textTransform: 'initial',
-    fontSize: '10px',
+    fontSize: 10,
+    fontWeight: 'normal',
+  },
+  buttonContainer: {
+    width: 'initial',
+    padding: '6px 10px',
   },
   iOSChecked: {
     transform: 'translateX(15px)',
@@ -44,22 +61,30 @@ const styles = theme => ({
   },
   iOSBar: {
     borderRadius: 13,
-    width: 42,
-    height: 26,
-    marginTop: -13,
-    marginLeft: -21,
+    width: 20,
+    height: 11,
+    marginTop: -5,
+    marginLeft: -10,
     backgroundColor: 'rgb(81, 82, 83)',
     opacity: 1,
     transition: theme.transitions.create(['background-color']),
   },
   iOSIcon: {
-    width: 24,
-    height: 24,
+    width: 11,
+    height: 11,
+    marginLeft: -15,
     backgroundColor: 'rgb(154, 155, 156)',
   },
   iOSIconChecked: {
     boxShadow: theme.shadows[1],
   },
+  iOSSwitchBase: {
+    height: 24,
+    width: 24,
+  },
+  iOSroot: {
+    width: 24,
+  }
 });
 
 class MenuBar extends Component {
@@ -92,8 +117,8 @@ class MenuBar extends Component {
                 justify="center"
                 alignItems="center"
                 >
-                    <i className="material-icons">keyboard_arrow_down</i>
-                    <span className={classes.buttonText}>Beatae Vita</span>
+                    <i className={classes.downArrowButton + ' material-icons'}>keyboard_arrow_down</i>
+                    <label className={classes.buttonText}>Beatae Vita</label>
                 </Grid>
             </Button>
             <div className='divider-vertical' />
@@ -106,43 +131,91 @@ class MenuBar extends Component {
 
             <div className='divider-vertical' />
 
-            <div className='theme-grey-text'>
-                <IconButton color="inherit">
-                    <i className="material-icons">delete</i>
-                </IconButton>
+            <Grid 
+            container 
+            direction='row'
+            justify="center"
+            alignItems="center"
+            className={classes.buttonContainer + ' theme-grey-text'}
+            >
+                <Grid 
+                container 
+                item
+                direction='column'
+                justify="center"
+                alignItems="center"
+                className={classes.buttonContainer}
+                >
+                  <IconButton color="inherit" className={classes.buttonIcon}>
+                      <i className='material-icons'>delete</i>
+                  </IconButton>
+                  <label className={classes.buttonText}>Archieto</label>
+                </Grid>  
                 
-                <Switch 
-                classes={{
+                <Grid 
+                container 
+                item
+                direction='column'
+                justify="center"
+                alignItems="center"
+                className={classes.buttonContainer}
+                >
+                  <Switch 
+                  classes={{
                     switchBase: classes.iOSSwitchBase,
+                    root: classes.iOSroot,
                     bar: classes.iOSBar,
                     icon: classes.iOSIcon,
                     iconChecked: classes.iOSIconChecked,
                     checked: classes.iOSChecked,
-                }}
-                disableRipple
-                id='switch1' 
-                checked={this.state.switch1} 
-                onChange={this.toggleSwitch}
-                />
+                  }}
+                  disableRipple
+                  id='switch1' 
+                  checked={this.state.switch1} 
+                  onChange={this.toggleSwitch}
+                  />
+                  <label className={classes.buttonText}>Aperiam</label>
+                </Grid>
                 
-                <Switch 
-                classes={{
+                <Grid 
+                container 
+                item
+                direction='column'
+                justify="center"
+                alignItems="center"
+                className={classes.buttonContainer}
+                >
+                  <Switch 
+                  classes={{
                     switchBase: classes.iOSSwitchBase,
+                    root: classes.iOSroot,
                     bar: classes.iOSBar,
                     icon: classes.iOSIcon,
                     iconChecked: classes.iOSIconChecked,
                     checked: classes.iOSChecked,
-                }}
-                disableRipple
-                id='switch2' 
-                checked={this.state.switch2} 
-                onChange={this.toggleSwitch}
-                />
+                  }}
+                  disableRipple
+                  id='switch2' 
+                  checked={this.state.switch2} 
+                  onChange={this.toggleSwitch}
+                  />
+                  <label className={classes.buttonText}>Totam</label>
+                </Grid>
 
-                <IconButton color="inherit">
-                    <i className="material-icons">mail</i>
-                </IconButton>
-            </div>
+                <Grid 
+                container 
+                item
+                direction='column'
+                justify="center"
+                alignItems="center"
+                className={classes.buttonContainer}
+                >
+                  <IconButton color="inherit" className={classes.buttonIcon}>
+                      <i className='material-icons'>mail</i>
+                  </IconButton>
+                  <label className={classes.buttonText}>Rem</label>
+                </Grid>
+            </Grid>
             <div className='divider-vertical' />
 
             <div className={classes.grow} />
