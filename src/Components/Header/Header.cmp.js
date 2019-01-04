@@ -115,7 +115,7 @@ class Header extends Component {
                     spacing={8}
                     className={classes.row}
                     >
-                        <Grid xs item><p>Voluptatem (duvmem)</p></Grid>
+                        <Grid xs item><p>Voluptatem (duvrnem)</p></Grid>
                         <Grid xs item><p className={classes.bolder}>Architecto beatae vitae</p></Grid>
                         <Grid xs item><p className={classes.white}>architecto beatae vitae</p></Grid>
                     </Grid>
@@ -162,7 +162,7 @@ class Header extends Component {
                     spacing={8}
                     className={classes.row}
                     >
-                        <Grid xs item><p>Omnis iste Natus Erro</p></Grid>
+                        <Grid xs item><p>Omnis Iste Natus Erro</p></Grid>
                         <Grid xs item><p className={classes.bolder}>Accusantium doloremque laudant</p></Grid>
                         <Grid xs item><p className={classes.white}></p></Grid>
                     </Grid>

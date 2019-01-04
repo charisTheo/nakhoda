@@ -35,10 +35,8 @@ const styles = () => ({
   selected: {
     color: 'rgb(254, 255, 255)',
   },
-  dropdown: {
-    fontSize: '12px',
-  },
   avatar: {
+    marginLeft: '10vw',
     width: '18px',
     height: '18px',
     fontSize: '12px',
@@ -107,7 +105,7 @@ class NavBar extends Component {
                 <Button onClick={() => {this.isActive(3)}} 
                 className={classes.button + (this.state.index === 3 ? ' theme-yellow-text' : '')} 
                 href="#">
-                  ipsa quae
+                  Ipsa quae
                 </Button>
                 <Button onClick={() => {this.isActive(4)}} 
                 className={classes.button + (this.state.index === 4 ? ' theme-yellow-text' : '')} 
@@ -116,6 +114,8 @@ class NavBar extends Component {
                 </Button>
               </Grid>
               
+              <div style={{flexGrow: 1}}></div>
+
               <Dropdown
                 list={['Veris Veritatis', 'Veris', 'Veritatis']}
                 />

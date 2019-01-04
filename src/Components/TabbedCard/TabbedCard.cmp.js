@@ -17,18 +17,19 @@ const styles = theme => ({
   card: {
     borderRadius: 30,
     width: '100%',
+    margin: 30,
   },
   tabsRoot: {
     borderBottom: '1px solid rgb(29, 30, 31)',
   },
   tabsIndicator: {
     backgroundColor: 'rgb(224, 174, 97)',
-    // width: 20,
   },
   tabRoot: {
     textTransform: 'initial',
     fontWeight: '500',
     color: 'rgb(210, 211, 212)',
+    margin: '0 20px',
     '&:hover': {
       color: 'rgb(248, 203, 135)',
     },
@@ -62,6 +63,8 @@ class TabbedCard extends Component {
     const tabStyles = window.getComputedStyle(event.currentTarget);
     const tabWidth = parseInt(tabStyles.width.split('px')[0]);
     const tabLeft = parseInt(tabStyles.left.split('px')[0]);
+    // change tab value
+    // and set the according width and position of the tab indicator
     this.setState({
       value: value,
       indicatorStyles: {
@@ -98,7 +101,7 @@ class TabbedCard extends Component {
                 color: 'rgb(178, 131, 119)'
               }} classes={{root: classes.tabRoot, selected: classes.tabSelected}} />
             <Tab label="Accusantium doloremque laudant" classes={{root: classes.tabRoot, selected: classes.tabSelected}} />
-            <Tab label="Voluptatem (duvrem)" classes={{root: classes.tabRoot, selected: classes.tabSelected}} />
+            <Tab label="Voluptatem (duvrnem)" classes={{root: classes.tabRoot, selected: classes.tabSelected}} />
           </StyledCustomTabs>          
         </CardActions>
 
