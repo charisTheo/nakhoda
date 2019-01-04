@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
-import Switch from '@material-ui/core/Switch';
-import Grid from '@material-ui/core/Grid';
-import { withStyles } from '@material-ui/core/styles';
+import { 
+  withStyles,
+  Grid,
+  Button,
+  Switch,
+  IconButton,
+  Toolbar,
+  AppBar
+} from '@material-ui/core';
 
 const styles = theme => ({
   root: {
@@ -28,8 +30,8 @@ const styles = theme => ({
     textTransform: 'initial',
     fontSize: 14,
     fontWeight: 'lighter',
-    minWidth: 54,
     color: 'rgb(178, 131, 119)',
+    minWidth: 54,
   },
   downArrowButton: {
     backgroundColor: 'rgb(94, 95, 96)',

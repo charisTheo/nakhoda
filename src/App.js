@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
 import NavBar from "./Components/Nav/NavBar.cmp";
 import MenuBar from './Components/MenuBar/MenuBar.cmp';
 import Header from './Components/Header/Header.cmp';
-
-// import Icon from '@material-ui/core/Icon';
 
 class App extends Component {
   render() {

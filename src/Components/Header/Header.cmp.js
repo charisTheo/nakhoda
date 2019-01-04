@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Grid from '@material-ui/core/Grid';
-import { withStyles } from '@material-ui/core/styles';
+import { Grid, withStyles} from '@material-ui/core';
+import TabbedCard from './../TabbedCard/TabbedCard.cmp';
 
 const styles = theme => ({
     header: {
@@ -66,7 +66,7 @@ class Header extends Component {
                 <Grid 
                 container
                 item
-                lg
+                xl
                 direction='row'
                 justify='flex-start'
                 alignItems='center'
@@ -125,7 +125,7 @@ class Header extends Component {
                 <Grid 
                 container
                 item
-                lg
+                xl
                 direction='row'
                 justify='flex-start'
                 alignItems='center'
@@ -163,7 +163,7 @@ class Header extends Component {
                     className={classes.row}
                     >
                         <Grid xs item><p>Omnis iste Natus Erro</p></Grid>
-                        <Grid xl={8} item><p className={classes.bolder}>Accusantium doloremque laudant</p></Grid>
+                        <Grid xs item><p className={classes.bolder}>Accusantium doloremque laudant</p></Grid>
                         <Grid xs item><p className={classes.white}></p></Grid>
                     </Grid>
                     <Grid 
@@ -179,8 +179,9 @@ class Header extends Component {
                         <Grid xs item><p className={classes.white}></p></Grid>
                     </Grid>
                 </Grid>
-            </Grid>
 
+                <TabbedCard />
+            </Grid>
       </header>
     )
   }
